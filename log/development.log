@@ -1,16 +1,63 @@
-# Logfile created on Wed Jul 14 23:36:10 +0800 2010 by logger.rb/22285
+# Logfile created on Thu Jul 15 01:08:19 +0800 2010 by logger.rb/22285
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'caozhzh') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/admin/login]
 
 
-Processing UsersController#edit (for 127.0.0.1 at 2010-07-14 23:36:10) [GET]
+Processing AdminController#index (for 127.0.0.1 at 2010-07-15 01:08:19) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2010-07-15 01:08:22) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT * FROM "orders" [0m
+Rendering template within layouts/store
+Rendering orders/index
+Completed in 31ms (View: 11, DB: 1) | 200 OK [http://localhost/orders]
+
+
+Processing OrdersController#show (for 127.0.0.1 at 2010-07-15 01:08:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mOrder Load (0.2ms)[0m   [0;1mSELECT * FROM "orders" WHERE ("orders"."id" = 2) [0m
+Rendering template within layouts/store
+Rendering orders/show
+Completed in 24ms (View: 5, DB: 1) | 200 OK [http://localhost/orders/2]
+
+
+Processing OrdersController#edit (for 127.0.0.1 at 2010-07-15 01:08:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mOrder Load (0.2ms)[0m   [0;1mSELECT * FROM "orders" WHERE ("orders"."id" = 2) [0m
+Rendering template within layouts/store
+Rendering orders/edit
+Completed in 35ms (View: 16, DB: 1) | 200 OK [http://localhost/orders/2/edit]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2010-07-15 01:08:32) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT * FROM "orders" [0m
+Rendering template within layouts/store
+Rendering orders/index
+Completed in 29ms (View: 12, DB: 1) | 200 OK [http://localhost/orders]
+
+
+Processing OrdersController#edit (for 127.0.0.1 at 2010-07-15 01:08:34) [GET]
   Parameters: {"id"=>"1"}
-  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
-Rendering template within layouts/users
-Rendering users/edit
-Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/users/1/edit]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mOrder Load (0.2ms)[0m   [0;1mSELECT * FROM "orders" WHERE ("orders"."id" = 1) [0m
+Rendering template within layouts/store
+Rendering orders/edit
+Completed in 93ms (View: 15, DB: 1) | 200 OK [http://localhost/orders/1/edit]
 
 
-Processing UsersController#index (for 127.0.0.1 at 2010-07-14 23:36:14) [GET]
-  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" ORDER BY name[0m
-Rendering template within layouts/users
-Rendering users/index
-Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/users]
+Processing OrdersController#index (for 127.0.0.1 at 2010-07-15 01:08:45) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT * FROM "orders" [0m
+Rendering template within layouts/store
+Rendering orders/index
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://localhost/orders]
