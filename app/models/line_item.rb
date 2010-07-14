@@ -6,11 +6,20 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
 #---
-require 'test_helper'
 
-class StoreControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+class LineItem < ActiveRecord::Base
+  belongs_to :order
+  belongs_to :product
+
+
+  def self.from_cart_item(cart_item)
+    li = self.new
+    li.product     = cart_item.product
+    li.quantity    = cart_item.quantity
+    li.total_price = cart_item.price
+    li
   end
+
+
 end
+

@@ -1,14 +1,17 @@
 <h1>Your Pragmatic Catalog</h1>
+
 <% for product in @products -%>
   <div class="entry">
+    <%= image_tag(product.image_url) %>
+    <h3><%=h product.title %></h3>
+    <%= product.description %>
+    <div class="price-line">
+    <span class="price"><%= number_to_currency(product.price) %></span>
+    <!-- START:form_remote_tag -->
     <% form_remote_tag :url => { :action => 'add_to_cart', :id => product } do %>
-      <%= image_submit_tag product.image_url, :alt => product.title, :title => 'Add to Cart', :class => 'product_picture' -%>
-      <h3><%=h product.title %></h3>
-      <%= product.description %>
-      <div class="price-line">
-        <span class="price"><%= number_to_currency(product.price, :unit => "&pound;", :separator => ",", :delimiter => "") %></span>
-        <%= submit_tag 'Add to Cart' %>
-      </div>
+      <%= submit_tag "Add to Cart" %>
     <% end %>
+    <!-- END:form_remote_tag -->
+    </div>
   </div>
 <% end %>

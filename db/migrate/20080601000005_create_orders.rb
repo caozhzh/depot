@@ -6,11 +6,21 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
 #---
-require 'test_helper'
+class CreateOrders < ActiveRecord::Migration
+  
+  def self.up
+    create_table :orders do |t|
+      t.string :name
+      t.text :address
+      t.string :email
+      t.string :pay_type, :limit => 10
 
-class StoreControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+      t.timestamps
+    end
+  end
+  
+
+  def self.down
+    drop_table :orders
   end
 end

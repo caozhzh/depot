@@ -8,7 +8,7 @@
 #---
 require 'test_helper'
 
-class StoreControllerTest < ActionController::TestCase
+class AdminControllerTest < ActionController::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true
