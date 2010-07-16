@@ -5,9 +5,9 @@ class AdminController < ApplicationController
       if user
         session[:user_id] = user.id
         redirect_to :action => 'index'
+      else
+        flash.now[:notice] = 'Invalid user/password combination'
       end
-    else
-      flash.now[:notice] = 'Invalid user/password combination'
     end
   end
 
