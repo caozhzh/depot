@@ -1,32 +1,20 @@
-# Logfile created on Fri Jul 16 23:37:53 +0800 2010 by logger.rb/22285
-Rendered rescues/_trace (31.7ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (not_found)
-
-
-Processing InfoController#who_bought (for 127.0.0.1 at 2010-07-16 23:37:58) [GET]
-  Parameters: {"id"=>"2"}
+# Logfile created on Sun Jul 18 23:23:29 +0800 2010 by logger.rb/22285
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+  [4;35;1mLineItem Load (0.3ms)[0m   [0mSELECT * FROM "line_items" WHERE ("line_items".order_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
   [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
-Rendering info/who_bought
-  [4;35;1mOrder Load (0.3ms)[0m   [0mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 2)) [0m
-Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/info/who_bought/2]
+Completed in 49ms (View: 34, DB: 2) | 200 OK [http://localhost/info/who_bought/3.atom]
 
 
-Processing InfoController#who_bought (for 127.0.0.1 at 2010-07-16 23:38:17) [GET]
-  Parameters: {"id"=>"2"}
-  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
-Rendering template within layouts/store
-Rendering info/who_bought
-  [4;35;1mOrder Load (0.3ms)[0m   [0mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 2)) [0m
-Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/info/who_bought/2]
+Processing InfoController#who_bought (for 127.0.0.1 at 2010-07-18 23:28:38) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
 
-
-Processing InfoController#who_bought to xml (for 127.0.0.1 at 2010-07-16 23:41:58) [GET]
-  Parameters: {"id"=>"4"}
-  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 4) [0m
-
-ActiveRecord::RecordNotFound (Couldn't find Product with ID=4):
-  app/controllers/info_controller.rb:3:in `who_bought'
+NoMethodError (undefined method `macro' for nil:NilClass):
+  app/controllers/info_controller.rb:11:in `who_bought'
+  app/controllers/info_controller.rb:5:in `who_bought'
   /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
   /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
   /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
@@ -39,103 +27,37 @@ ActiveRecord::RecordNotFound (Couldn't find Product with ID=4):
   /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 
-Rendered rescues/_trace (32.1ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (not_found)
-
-
-Processing InfoController#who_bought to xml (for 127.0.0.1 at 2010-07-16 23:42:03) [GET]
-  Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-Rendering info/who_bought
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/info/who_bought/3.xml]
-
-
-Processing InfoController#who_bought to html (for 127.0.0.1 at 2010-07-16 23:42:07) [GET]
-  Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-Rendering template within layouts/store
-Rendering info/who_bought
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/info/who_bought/3.html]
-
-
-Processing InfoController#who_bought to html (for 127.0.0.1 at 2010-07-16 23:43:40) [GET]
-  Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-Rendering template within layouts/store
-Rendering info/who_bought
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 86ms (View: 16, DB: 1) | 200 OK [http://localhost/info/who_bought/3.html]
-
-
-Processing InfoController#who_bought to html (for 127.0.0.1 at 2010-07-16 23:44:14) [GET]
-  Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-Rendering template within layouts/store
-Rendering info/who_bought
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/info/who_bought/3.html]
-
-
-Processing InfoController#who_bought to html (for 127.0.0.1 at 2010-07-16 23:44:30) [GET]
-  Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-Rendering template within layouts/store
-Rendering info/who_bought
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/info/who_bought/3.html]
-
-
-Processing ApplicationController#who_bought to xml (for 127.0.0.1 at 2010-07-16 23:46:43) [GET]
-  Parameters: {"id"=>"3"}
-
-SyntaxError (/home/caozhzh/drip/work/rorwork/depot/app/controllers/info_controller.rb:8: syntax error, unexpected tSYMBEG, expecting '}'
-        :xml => @product.to_xml :include => :orders }
-                                 ^):
-  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-
-Rendered rescues/_trace (87.8ms)
-Rendered rescues/_request_and_response (0.4ms)
+Rendered rescues/_trace (78.2ms)
+Rendered rescues/_request_and_response (0.5ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing InfoController#who_bought to xml (for 127.0.0.1 at 2010-07-16 23:47:01) [GET]
+Processing InfoController#who_bought (for 127.0.0.1 at 2010-07-18 23:29:19) [GET]
   Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-  [4;36;1mOrder Load (0.4ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 46ms (View: 0, DB: 1) | 200 OK [http://localhost/info/who_bought/3.xml]
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+
+NoMethodError (undefined method `macro' for nil:NilClass):
+  app/controllers/info_controller.rb:11:in `who_bought'
+  app/controllers/info_controller.rb:5:in `who_bought'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 
-Processing InfoController#who_bought (for 127.0.0.1 at 2010-07-16 23:47:29) [GET]
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InfoController#who_bought (for 127.0.0.1 at 2010-07-18 23:30:36) [GET]
   Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-Rendering template within layouts/store
-Rendering info/who_bought
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 26ms (View: 13, DB: 1) | 200 OK [http://localhost/info/who_bought/3]
-
-
-Processing InfoController#who_bought to xml (for 127.0.0.1 at 2010-07-16 23:47:35) [GET]
-  Parameters: {"id"=>"3"}
-  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 26ms (View: 0, DB: 0) | 200 OK [http://localhost/info/who_bought/3.xml]
-
-
-Processing InfoController#who_bought to xml (for 127.0.0.1 at 2010-07-16 23:52:09) [GET]
-  Parameters: {"id"=>"3"}
-  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
-  [4;35;1mOrder Load (0.3ms)[0m   [0mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
-Completed in 100ms (View: 0, DB: 1) | 200 OK [http://localhost/info/who_bought/3.xml]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+  [4;36;1mOrder Load (0.5ms)[0m   [0;1mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 3)) [0m
+Completed in 37ms (View: 0, DB: 1) | 200 OK [http://localhost/info/who_bought/3]

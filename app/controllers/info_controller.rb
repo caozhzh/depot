@@ -6,6 +6,9 @@ class InfoController < ApplicationController
       format.html
       format.xml { render :layout => false,
         :xml => @product.to_xml(:include => :orders) }
+      format.atom { render :layout => false }
+      format.json { render :layout => false,
+        :json => @product.to_json(:include => :orders) }
     end
   end
 
